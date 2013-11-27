@@ -7,8 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<% if user_signed_in? %>
+		<li><%= link_to 'Logout' %></li>
+	<% else %>
+		<li><%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %></li>
+	<% end %>
+	<%= yield %>
 
 </body>
 </html>
