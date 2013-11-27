@@ -33,6 +33,22 @@ gem 'omniauth-google-oauth2'
 gem 'google-api-client'
 gem 'rest-client'
 
+group :development do
+  gem 'annotate'
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+end
+
+group :test, :development do
+  gem 'rspec-rails'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
