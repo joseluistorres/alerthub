@@ -4,7 +4,7 @@ feature 'Sign in via Google' do
 
 	background do
 		visit root_path
-		click_link 'Sign in'
+		click_link 'Sign in with Google'
 	end
 
 	scenario 'click login via Google' do
