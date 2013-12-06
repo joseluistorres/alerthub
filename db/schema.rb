@@ -11,10 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127045809) do
+ActiveRecord::Schema.define(version: 20131206103343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "alert_locations", force: true do |t|
+    t.integer  "alert_id"
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "alerts", force: true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "glass_timeline_items", force: true do |t|
+    t.string   "type"
+    t.integer  "google_account_id"
+    t.string   "glass_item_id"
+    t.boolean  "is_deleted"
+    t.string   "glass_etag"
+    t.string   "glass_self_link"
+    t.string   "glass_kind"
+    t.datetime "glass_created_at"
+    t.datetime "glass_updated_at"
+    t.string   "glass_content_type"
+    t.text     "glass_content"
+    t.datetime "display_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "glass_timeline_items", ["google_account_id"], name: "index_glass_timeline_items_on_google_account_id", using: :btree
+
+  create_table "google_accounts", force: true do |t|
+    t.string   "token"
+    t.string   "refresh_token"
+    t.integer  "expires_at"
+    t.string   "email"
+    t.string   "name"
+    t.text     "id_token"
+    t.string   "verification_secret"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "google_accounts", ["user_id"], name: "index_google_accounts_on_user_id", using: :btree
+
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.float    "lat"
+    t.float    "long"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
