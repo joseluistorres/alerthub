@@ -31,7 +31,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 gem 'google-api-client'
-gem 'rest-client'
+gem 'glass-rails'
 
 group :development do
   gem 'annotate'

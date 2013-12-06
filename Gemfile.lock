@@ -75,6 +75,9 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    glass-rails (1.0.5)
+      google-api-client
+      railties (>= 3.1)
     google-api-client (0.6.4)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -169,8 +172,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    rest-client (1.6.7)
-      mime-types (>= 1.16)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -240,6 +241,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  glass-rails
   google-api-client
   guard-rspec
   jbuilder (~> 1.2)
@@ -248,7 +250,6 @@ DEPENDENCIES
   omniauth-google-oauth2
   pg
   rails (= 4.0.0)
-  rest-client
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
