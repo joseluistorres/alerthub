@@ -20,7 +20,7 @@ development:
   database: alerthub_development
   pool: 5
   username: alerthub
-  password: alerthubpassword
+  password: alerthub
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -49,7 +49,7 @@ test:
   database: alerthub_test
   pool: 5
   username: alerthub
-  password: alerthubpassword
+  password: alerthub
 
 production:
   adapter: postgresql

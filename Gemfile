@@ -48,6 +48,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
 	gem 'dotenv-rails'
+  gem 'debugger'
 end
 
 group :doc do
